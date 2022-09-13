@@ -5,11 +5,11 @@ const os = require('os');
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-  const result = await axios.get('https://zipcloud.ibsnet.co.jp/api/search?zipcode=2700014');
+  const result = await axios.get('http://ip_server:3000/users');
 
   // console.log(434343, os.hostname());
-  res.json(result.data)
-  // res.render('index', { data: result.data });
+
+  res.render('index', { data: result.data.data });
 });
 
 module.exports = router;
